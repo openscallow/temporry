@@ -1,7 +1,7 @@
 <script>
   import { ChevronRight } from 'lucide-svelte';
 
-  export let shippingAddress = 'Mer devraj bhai, A17-18, Shiv ...';
+  export let shippingAddress = '';
   export let items = 1;
   export let currentPrice = 0;
   export let previousPrice = 0;
@@ -59,8 +59,8 @@
     <h3>Deliver to</h3>
     <div class="address-row">
       <div>
-        <p>Mer devraj bhai</p>
-        <p class="address-details">A17-18, Shiv Apartment Javahar Society, L.h ...</p>
+        <p></p>
+        <p class="address-details"></p>
       </div>
       <ChevronRight size={20} />
     </div>
