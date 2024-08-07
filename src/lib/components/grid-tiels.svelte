@@ -1,19 +1,24 @@
 <script>
   import { onMount } from 'svelte';
   import {productDatabase} from '$lib/json/product.js';
-  console.log(productDatabase[0])
+  console.log(productDatabase)
 
 
-  // console.log(productDatabase.map(itemss => ({
-  //   edff:itemss.img
-  // })));
+  
 
-  let products = [
-    {img: productDatabase[0].img,
-     link: `./${productDatabase[0].id}`,
-     name: productDatabase[0].name
-    }]
-  console.log(products[0].link)
+  let products = [];
+for (let key in productDatabase) {
+    if (productDatabase.hasOwnProperty(key)) {
+        products.push({
+            img: productDatabase[key].img,
+            link: `./${productDatabase[key].id}`,
+            name: productDatabase[key].name
+        });
+    }
+}
+
+
+  console.log(products[1].link)
 
 
   onMount();
