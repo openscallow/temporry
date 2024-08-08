@@ -25,6 +25,51 @@ export let productDatabase ={
         currentPrice: 20,
         previousPrice: 25,
         id:2
+    },
+    3:{
+        img: "https://m.media-amazon.com/images/I/41SEuM4iUPL._SY450_.jpg",
+        compnay: "Cello",
+        name: "Cello Gripper Ball Pen [Blue]",
+        description: "Cello Blue Polycarbonate Ballpoint Pen, Transparent.",
+        currentPrice: 9,
+        previousPrice: 10,
+        id:3
+    },
+    4:{
+        img: "https://m.media-amazon.com/images/I/81bv2pWZh1L._SY450_.jpg",
+        compnay: "Cello",
+        name: "Cello Gripper Ball Pen, Pack of 5 [Blue]",
+        description: "Cello Blue Polycarbonate Ballpoint Pen, Transparent.",
+        currentPrice: 45,
+        previousPrice: 50,
+        id:4
+    },
+    5:{
+        img: "https://m.media-amazon.com/images/I/71s5w4CzntL._SY450_.jpg",
+        compnay: "Saino softek",
+        name: "Saino softek Pen [Blue]",
+        description: "Saino Softek Ballpoint Pen, Blue ink, suitable for adults. Available in extra fine and fine point types.",
+        currentPrice: 3,
+        previousPrice: 5,
+        id:5
+    },
+    6:{
+        img: "https://m.media-amazon.com/images/I/61ztN-eSVlL._SY355_.jpg",
+        compnay: "Saino softek",
+        name: "Saino softek Pen, pack of 12 [Blue]",
+        description: "Saino Softek Ballpoint Pen, Blue ink, suitable for adults. Available in extra fine and fine point types.",
+        currentPrice: 48,
+        previousPrice: 60,
+        id:6
+    },
+    7:{
+        img: "https://m.media-amazon.com/images/I/31qyEuA+uWL._SY355_.jpg",
+        compnay: "Doms",
+        name: "Doms Erasener Eraser and Sharpener [Yellow]",
+        description: "Generic Plastic, Portable, ideal for Artists, Teachers, and Students. Manufactured by Doms.",
+        currentPrice: 10,
+        previousPrice: 15,
+        id:7
     }
     
   }
