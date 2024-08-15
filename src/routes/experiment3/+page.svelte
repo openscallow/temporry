@@ -37,6 +37,7 @@
             <th>Mobile</th>
             <th>Address</th>
             <th>Product</th>
+            <th>status</th>
           </tr>
         </thead>
         <tbody>
@@ -47,6 +48,7 @@
               <td>{order.mobile}</td>
               <td>{order.address}</td>
               <td>{order.product}</td>
+              <td>{order.status}</td>
             </tr>
           {/each}
         </tbody>
@@ -64,12 +66,15 @@
   
     .table-container {
       overflow-x: auto;
+      overflow-y: auto;
     }
   
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 20px;
+      overflow-x: auto;
+      overflow-y: auto;
     }
   
     th, td {
