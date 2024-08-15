@@ -1,9 +1,35 @@
 <script>
-  /** @type {import('./$types').PageData} */
-  import {productDatabase} from '$lib/json/product.js';
-  export let data;
+  import { onMount } from 'svelte';
+  import { browser } from '$app/environment';
+  import {productDatabase} from '$lib/json/product.js'
 
-  $: ({ orders, error } = data);
+  let orders = [];
+
+  onMount(async () => {
+    if (browser) {
+      const mobile = localStorage.getItem('mobile');
+      if (mobile) {
+        try {
+          const response = await fetch('/api5', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ mobile }),
+          });
+
+          if (response.ok) {
+            orders = await response.json();
+          } else {
+            console.error('Failed to fetch orders');
+          }
+        } catch (error) {
+          console.error('Error fetching orders:', error);
+        }
+      }
+    }
+  });
+
 
   function handleCancelClick(product) {
     window.location.href = `./cancel?${product}`;
@@ -12,10 +38,9 @@
   function handleBuyClick(productd) {
     window.location.href = `./${productd}`;
   }
-  
-
 </script>
 
+<main>
 
   {#each orders as order}
   {#if order.status === "pending"}
@@ -55,16 +80,23 @@
         <p class="product-details">School/College: {order.address}</p>
         <p class="product-details">index: {order.productx}</p>
         <p class="product-total">Total: {order.product * productDatabase[order.productx].currentPrice} rupees</p>
-        <div class="button-container">
-          <!-- <button class="btn btn-cancel" on:click={() => handleCancelClick(order.id)}>Cancel</button> -->
+        <div class="button-container"> 
+          
           <button class="btn btn-buy" on:click={() => handleBuyClick(order.productx)}>Buy Again</button>
         </div>
       </div>
     </div>
     </div>
     {/if}
-  {/each}
-  <style>
+  {/each} 
+</main>
+
+
+
+
+
+
+   <style>
     .card-wrapper {
       display: flex;
       justify-content: center;
