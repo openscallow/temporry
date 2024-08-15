@@ -79,7 +79,8 @@
         name: productName,
         items: productQuantity,
         currentPrice: currentPrice,
-        previousPrice: previousPrice
+        previousPrice: previousPrice,
+        index : productNameUrl
       };
       
       sessionStorage.setItem('userData', JSON.stringify(data));
