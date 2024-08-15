@@ -8,7 +8,7 @@
   
     onMount(() => {
       // Any additional setup logic can be added here
-      storedData = localStorage.getItem('myData') || '';
+      storedData = localStorage.getItem('mobile') || '';
     });
   
     function toggleSidebar() {
@@ -154,7 +154,7 @@
       </div>
       <div class="nav-links">
         <a href="./" class="active">Home</a>
-        <a href="#">Shop</a>
+        <a href="./orderHistory">Orders</a>
         <a href="#">Blog</a>
         <a href="#">About</a>
         <a href="#">Contact</a>
@@ -188,7 +188,7 @@
     </div>
     <div class="sidebar-nav">
       <a href="./" class="active">Home</a>
-      <a href="#">Shop</a>
+      <a href="./orderHistory">Orders</a>
       <a href="#">Blog</a>
       <a href="#">About</a>
       <a href="#">Contact</a>
