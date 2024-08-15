@@ -5,6 +5,8 @@
     let mobile;
     let address;
     let product;
+    let indexs;
+
     
     function getUserData() {
         if (typeof localStorage !== 'undefined') {
@@ -12,20 +14,21 @@
             mobile = localStorage.getItem('mobile');
             address = localStorage.getItem('userAddress');
             let productObj =JSON.parse(sessionStorage.getItem("userData"));
-            console.log(productObj.name);
-            product = `${productObj.name}(${productObj.items})`
-            console.log(name, mobile, address, product);
+            indexs = `${productObj.index}`;
+            product = `${productObj.items}`
+            console.log(name, mobile, address, product, indexs);
         }
     }
     
     async function addUser() {
+        console.log(name, mobile, address, product, indexs);
         try {
             const response = await fetch('/api2', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ name, mobile, address, product})
+                body: JSON.stringify({ name, mobile, address, product, indexs})
             });
             console.log(response);
             if (response.ok) {
@@ -35,6 +38,7 @@
                     let checkIsOrder = sessionStorage.getItem('userData');
                     if (checkIsOrder) {
                         console.log('User added with');
+
                         window.location.href = '/';
                         
                     } 
@@ -49,6 +53,7 @@
     
     onMount(() => {
         getUserData();
+        console.log(indexs)
         addUser();
     });
     </script>
