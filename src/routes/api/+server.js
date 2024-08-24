@@ -1,12 +1,12 @@
 import mysql from 'mysql2/promise';
-
+let hostequal = process.env.CALLOWDB_HOST;
 export async function POST({ request }) {
   let connection;
   const { name, mobile } = await request.json();
 
   try {
     connection = await mysql.createConnection({
-      host: process.env.CALLOWDB_HOST,
+      host: hostequal,
         user: 'gautam',
         password: 'Gautam404&',
         database: 'callowdb'
