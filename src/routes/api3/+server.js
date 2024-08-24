@@ -1,11 +1,12 @@
 import mysql from 'mysql2/promise';
 import { json } from '@sveltejs/kit';
 
+let hostequal = process.env.CALLOWDB_HOST;
 export async function GET() {
     let connection;
     try {
         connection = await mysql.createConnection({
-            host: 'callowdatabase.cpam6os8m3nn.ap-south-1.rds.amazonaws.com',
+            host: hostequal,
             user: 'gautam',
             password: 'Gautam404&',
             database: 'callowdb'
