@@ -6,7 +6,7 @@ export async function POST({ request }) {
 
   try {
     connection = await mysql.createConnection({
-      host: 'callowdatabase.cpam6os8m3nn.ap-south-1.rds.amazonaws.com',
+      host: process.env.CALLOWDB_HOST,
         user: 'gautam',
         password: 'Gautam404&',
         database: 'callowdb'
